@@ -1,5 +1,5 @@
 Greg Stillwell
-Galactic Planet
+Currency Converter
 
 - Technologies Used
   Html
@@ -22,7 +22,7 @@ clone this repository: $ git clone
 open new terminal in open tab on the top left
 type npm install
 type npm run start
-run test
+
 
 
 - Known Bugs
