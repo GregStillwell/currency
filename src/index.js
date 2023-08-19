@@ -18,5 +18,7 @@ function getCurrency(USD, otherCurr) {
 
 
 // UI logic
-function
+function convert(USD, otherCurr) {
+  const 
+}
   
