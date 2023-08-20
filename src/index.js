@@ -21,20 +21,20 @@ function getCurrency(USD, otherCurr) {
 function convert(response, USD, otherCurr) {
   const rates = response.conversion_rates
   const conversion = Math.floor(rates[otherCurr] * USD);
-  console.log(conversion)
   if (conversion === undefined) {
-    document.getElementById("showResponse").innerText`we could not get ${otherCurr} currency`
-  } else if (conversion === isNaN) {
-    document.getElementById("showResponse").innerText`we could not get ${otherCurr} currency`;
-  } else {
+    document.getElementById("showResponse").innerText =`We couldn't get ${otherCurr} currency`;
+  } else if (isNaN(conversion)) {
+    document.getElementById("showResponse").innerText =`We couldn't get ${otherCurr} currency`;
+   } else {
     document.getElementById("showResponse").innerText = `$${USD} = ${conversion} ${otherCurr}`;
   }
+  
 
 }
 
 
 function printError(error) {
-  document.getElementById("showResponse").innerText`We ran into a problem try again ${error}.`;
+  document.getElementById("showResponse").innerText`We ran into a problem try again ${error}.`
 }
 
 function handleForm(event) {
@@ -48,6 +48,6 @@ function handleForm(event) {
 
 window.addEventListener("load", function () {
   document.querySelector("form").addEventListener("submit", handleForm);
-})
+});
 
 
