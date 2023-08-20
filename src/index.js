@@ -22,13 +22,13 @@ function convert(response, USD, otherCurr) {
   const rates = response.conversion_rates
   const conversion = Math.floor(rates[otherCurr] * USD);
   if (conversion === undefined) {
-    document.getElementById("showResponse").innerText =`We couldn't get ${otherCurr} currency`;
+    document.getElementById("showResponse").innerText = `We couldn't get ${otherCurr} currency`;
   } else if (isNaN(conversion)) {
-    document.getElementById("showResponse").innerText =`We couldn't get ${otherCurr} currency`;
-   } else {
+    document.getElementById("showResponse").innerText = `We couldn't get ${otherCurr} currency`;
+  } else {
     document.getElementById("showResponse").innerText = `$${USD} = ${conversion} ${otherCurr}`;
   }
-  
+
 
 }
 

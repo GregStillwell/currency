@@ -3,50 +3,65 @@ Currency Converter
 by Greg Stillwell
 
 - Technologies Used
-  Html
-  css
-  js
-  JSON
-  webpack
-  BABEL
-  NPM
-  ESLint
-  Jest
-  Node.js
+ - Html
+ - css
+ - js
+ - JSON
+ - webpack
+ - BABEL
+ - NPM
+ - ESLint
+ - Jest
+ - Node.js
 
 
 - Description
 Currency converter is an website where you pick the amount of money in USD and pick any other country currency and it will convert USD amount to the country currency amount.
 
 - Setup/Installation Requirements
-  Clone this repository: $ git clone 
-  Open this website in VS Code
-  Go in the .gitignore type in a new line under .converage/ .env
-  Make a env file by:
-        clicking new terminal in the top left 
-             typing touch .env
+  Clone this repository: $ git clone https://github.com/GregStillwell/currency
 
-  Get your Api Key by creating a account at https://www.exchangerate-api.com/ 
-  Put your Api Key in the .env file by typing API_KEY= Your Api Key Here
+  (1) Open this repository in VS Code
 
-Install dotenv plugin   
-  Go in the terminal and typing 
-    npm install dotenv-webpack@2.0.0 --save-dev
-  Go in to webpack.config.js
+  (2) Go in the .gitignore type in a new line under .converage/ .env
+
+
+  (1) Make a env file by:
+
+        (2) clicking new terminal in the top left 
+
+             (3)typing touch .env
+
+ (1) Get your Api Key by creating a account at https://www.exchangerate-api.com/
+  
+ (2) Put your Api Key in the .env file by typing API_KEY= Your Api Key Here
+
+(1) Install dotenv plugin  
+
+      (2) Go in the terminal and typing 
+
+        (3)npm install dotenv-webpack@2.0.0 --save-dev
+
+(1) Go in to webpack.config.js
+
         Then copy and paste on line 5
+
          const Dotenv = require('dotenv-webpack'); 
 
-In your terminal type 
-  npm install
-  npm run build
-   npm run start 
+(1) In your terminal type 
+    npm install
 
-   The server should open and then put in any amount of USD and then pick a specific currency and it will convert the amount of USD in currency you picked.
+    npm run build
+
+    npm run start 
+
+
+The server should open and then put in any amount of USD and then pick a specific currency and it will convert the amount of USD in currency you picked.
 
 
 
 - Known Bugs
-
+None at this time 
 
 
 - License
