@@ -20,8 +20,11 @@ function getCurrency(USD, otherCurr) {
 // UI logic
 function convert(response, USD, otherCurr) {
   const rates = response.conversion.rates
-  const conversion = rates + otherCurr * USD;
+  const conversion = rates[otherCurr] * USD;
   console.log(conversion)
+  if (conversion === undefined) {
+throw new Error ("We couldnt get the amount.")
+
 }
 
 function printError(error) {
@@ -30,11 +33,11 @@ function printError(error) {
   
 function handleForm(event) {
 event.preventDefault()
-const usdCurr = document.getElementById("Currency").value;
+const USD = document.getElementById("Currency").value;
 const otherCurr = document.getElementById("otherCurrency").value;
 document.getElementById("usdCurr").value = null;
 document.getElementById("otherCurr").value = null;
-getCurrency(usdCurr, otherCurr);
+getCurrency(USD, otherCurr);
 }
 
 window.addEventListener("load", function()  {
