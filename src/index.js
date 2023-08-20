@@ -23,4 +23,20 @@ function convert(response, USD, otherCurr) {
   const conversion = rates + otherCurr * USD;
   console.log(conversion)
 }
+
+function printError(error) {
+  document.getElementById ("showResponse").innerText `There was an error accessing the currencey rate data: ${error}.`;
+}
   
+function handleForm(event) {
+event.preventDefault()
+const usdCurr = document.getElementById("Currency").value;
+const otherCurr = document.getElementById("otherCurrency").value;
+document.getElementById("usdCurr").value = null;
+document.getElementById("otherCurr").value = null;
+getCurrency(usdCurr, otherCurr);
+}
+
+window.addEventListener("load", function()  {
+  document.querySelector("form").addEventListener("submit", handleForm)
+})
