@@ -5,46 +5,49 @@ import Currency from './currency';
 
 function getCurrency(USD, otherCurr) {
   Currency.getCurrency(USD, otherCurr)
-  .then(function(response) {
-    if (response.conversion_rates) {
-      convert(response,USD, otherCurr)
-    } else {
-      printError(response)
-    }
-  })
+    .then(function (response) {
+      if (response.conversion_rates) {
+        convert(response, USD, otherCurr)
+      } else {
+        printError(response);
+      }
+    });
 }
 
 
 
 
 // UI logic
-  function convert(response, USD, otherCurr) {
+function convert(response, USD, otherCurr) {
   const rates = response.conversion_rates
-  const conversion = rates[otherCurr] * USD;
+  const conversion = Math.floor(rates[otherCurr] * USD);
   console.log(conversion)
   if (conversion === undefined) {
-  document.getElementById("showResponse") .innerText `we could not get ${otherCurr} currency`
+    document.getElementById("showResponse").innerText`we could not get ${otherCurr} currency`
+  } else if (conversion === isNaN) {
+    document.getElementById("showResponse").innerText`we could not get ${otherCurr} currency`;
+  } else {
+    document.getElementById("showResponse").innerText = `$${USD} = ${conversion} ${otherCurr}`;
+  }
 
-} else {
-    document.getElementById("showResponse").innerText =`${USD} = ${conversion} ${otherCurr}`;
-  }
-  }
+}
+
 
 function printError(error) {
-  document.getElementById ("showResponse").innerText `There was an error accessing the currencey rate data: ${error}.`;
-}
-  
-function handleForm(event) {
-event.preventDefault()
-const USD = document.getElementById("Currency").value;
-const otherCurr = document.getElementById("otherCurrency").value;
-document.getElementById("Currency").value = null;
-document.getElementById("otherCurrency").value = null;
-getCurrency(USD, otherCurr);
+  document.getElementById("showResponse").innerText`We ran into a problem try again ${error}.`;
 }
 
-window.addEventListener("load", function ()  {
- document.querySelector("form").addEventListener("submit", handleForm);
+function handleForm(event) {
+  event.preventDefault()
+  const USD = document.getElementById("Currency").value;
+  const otherCurr = document.getElementById("otherCurrency").value;
+  document.getElementById("Currency").value = null;
+  document.getElementById("otherCurrency").value = null;
+  getCurrency(USD, otherCurr);
+}
+
+window.addEventListener("load", function () {
+  document.querySelector("form").addEventListener("submit", handleForm);
 })
 
 
