@@ -18,14 +18,17 @@ function getCurrency(USD, otherCurr) {
 
 
 // UI logic
-function convert(response, USD, otherCurr) {
-  const rates = response.conversion.rates
+  function convert(response, USD, otherCurr) {
+  const rates = response.conversion_rates
   const conversion = rates[otherCurr] * USD;
   console.log(conversion)
   if (conversion === undefined) {
-throw new Error ("We couldnt get the amount.")
+  document.getElementById("showResponse") .innerText `we could not get ${otherCurr} currency`
 
-}
+} else {
+    document.getElementById("showResponse").innerText =`${USD} = ${conversion} ${otherCurr}`;
+  }
+  }
 
 function printError(error) {
   document.getElementById ("showResponse").innerText `There was an error accessing the currencey rate data: ${error}.`;
@@ -35,11 +38,13 @@ function handleForm(event) {
 event.preventDefault()
 const USD = document.getElementById("Currency").value;
 const otherCurr = document.getElementById("otherCurrency").value;
-document.getElementById("usdCurr").value = null;
-document.getElementById("otherCurr").value = null;
+document.getElementById("Currency").value = null;
+document.getElementById("otherCurrency").value = null;
 getCurrency(USD, otherCurr);
 }
 
-window.addEventListener("load", function()  {
-  document.querySelector("form").addEventListener("submit", handleForm)
+window.addEventListener("load", function ()  {
+ document.querySelector("form").addEventListener("submit", handleForm);
 })
+
+
