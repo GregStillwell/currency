@@ -1,10 +1,10 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Currency from './Currency';
+import Currency from './currency';
 
-function getCurrency(response ,USD, otherCurr) {
-  Currency.getCurrency(response, USD, otherCurr)
+function getCurrency(USD, otherCurr) {
+  Currency.getCurrency(USD, otherCurr)
   .then(function(response) {
     if (response.conversion_rates) {
       convert(response,USD, otherCurr)
@@ -19,6 +19,8 @@ function getCurrency(response ,USD, otherCurr) {
 
 // UI logic
 function convert(response, USD, otherCurr) {
-  
+  const rates = response.conversion.rates
+  const conversion = rates + otherCurr * USD;
+  console.log(conversion)
 }
   
