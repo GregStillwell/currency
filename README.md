@@ -2,7 +2,7 @@ Currency Converter
 
 by Greg Stillwell
 
-- Technologies Used
+-- Technologies Used
  - Html
  - css
  - js
@@ -16,10 +16,11 @@ by Greg Stillwell
 
 
 
-- Description
+-- Description
+
 Currency converter is an website where you pick the amount of money in USD and pick any other country currency and it will convert USD amount to the country currency amount.
 
-- Setup/Installation Requirements
+-- Setup/Installation Requirements
   Clone this repository: $ git clone https://github.com/GregStillwell/currency
 
   (1) Open this repository in VS Code
@@ -61,11 +62,11 @@ The server should open and then put in any amount of USD and then pick a specifi
 
 
 
-- Known Bugs
+-- Known Bugs
 None at this time 
 
 
-- License
+-- License
 Copyright (c) [2023] [Gregory leon Stillwell]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
